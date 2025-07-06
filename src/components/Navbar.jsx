@@ -31,9 +31,10 @@ const Navbar = () => {
         styles.paddingX
       } w-full flex items-center py-5 fixed top-0 z-20 ${
         scrolled ? "bg-primary" : "bg-transparent"
-      }`}
+      } transition-all duration-300`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+        {/* Logo on the left */}
         <Link
           to="/"
           className="flex items-center gap-2"
@@ -42,20 +43,20 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex ">
-            Qazi &nbsp;
-            <span className="sm:block hidden"> | Frontend Developer</span>
+          <img src={logo} alt="logo" className="w-10 h-10 object-contain" />
+          <p className="text-white text-[24px] font-light cursor-pointer flex ">
+            DevXiour
           </p>
         </Link>
 
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        {/* Navigation links in the center */}
+        <ul className="list-none hidden sm:flex flex-row gap-10 absolute left-1/2 transform -translate-x-1/2">
           {navLinks.map((nav) => (
             <li
               key={nav.id}
               className={`${
                 active === nav.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
+              } hover:text-white text-[18px] font-medium cursor-pointer transition-colors duration-300`}
               onClick={() => setActive(nav.title)}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
@@ -63,6 +64,14 @@ const Navbar = () => {
           ))}
         </ul>
 
+        {/* CTA Button on the right */}
+        <div className="hidden sm:flex">
+          <button className="bg-[#915EFF] hover:bg-[#7c3aed] text-white font-medium py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105">
+            Get Started
+          </button>
+        </div>
+
+        {/* Mobile menu */}
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <img
             src={toggle ? close : menu}
@@ -91,6 +100,11 @@ const Navbar = () => {
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
+              <li className="mt-4">
+                <button className="bg-[#915EFF] hover:bg-[#7c3aed] text-white font-medium py-2 px-4 rounded-full text-[14px] transition-all duration-300">
+                  Get Started
+                </button>
+              </li>
             </ul>
           </div>
         </div>
