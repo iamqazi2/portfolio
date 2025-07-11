@@ -12,7 +12,8 @@ import {
   StarsCanvas,
 } from "./components";
 import FloatingTechBanner from "./components/Banner";
-// import Footer from "./components/Footer";
+import WhyChooseUs from "./components/WhyUs";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Hero />
         </div>
         <FloatingTechBanner />
+        <WhyChooseUs />
         {/* <About />
         <Experience />
         <Tech />
@@ -41,7 +43,7 @@ const App = () => {
           <Contact />
 
           {/* <StarsCanvas /> */}
-          {/*  <Footer /> */}
+          <Footer />
         </div>
       </div>
     </BrowserRouter>
