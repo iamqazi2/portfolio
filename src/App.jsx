@@ -11,17 +11,20 @@ import {
   Works,
   StarsCanvas,
 } from "./components";
+import FloatingTechBanner from "./components/Banner";
 // import Footer from "./components/Footer";
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
+        <StarsCanvas />
+
         <div className="relative">
-          <StarsCanvas />
           <Navbar />
           <Hero />
         </div>
+        <FloatingTechBanner />
         {/* <About />
         <Experience />
         <Tech />
@@ -33,6 +36,13 @@ const App = () => {
           <StarsCanvas />
           <Footer />
         </div> */}
+
+        <div className="relative z-0">
+          <Contact />
+
+          {/* <StarsCanvas /> */}
+          {/*  <Footer /> */}
+        </div>
       </div>
     </BrowserRouter>
   );
