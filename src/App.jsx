@@ -14,19 +14,21 @@ import {
 import FloatingTechBanner from "./components/Banner";
 import WhyChooseUs from "./components/WhyUs";
 import Footer from "./components/Footer";
+import Services from "./components/Experience";
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
-        <StarsCanvas />
-
         <div className="relative">
+          <StarsCanvas />
+
           <Navbar />
           <Hero />
         </div>
         <FloatingTechBanner />
         <WhyChooseUs />
+        <Services />
         {/* <About />
         <Experience />
         <Tech />
